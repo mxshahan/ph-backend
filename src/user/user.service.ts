@@ -6,7 +6,7 @@ import { Model } from 'mongoose';
 
 import { RegisterUserRequest } from './user.dto';
 import { UserType } from './user.interface';
-import { User, UserRole } from './user.schema';
+import { User, UserRole } from './schemas/user.schema';
 
 @Injectable()
 export class UserService {
@@ -41,12 +41,12 @@ export class UserService {
 
   async createAdminUser(payload: RegisterUserRequest): Promise<User> {
     try {
-      let user = await this.findOne({ role: UserRole.admin });
+      let user = await this.findOne({ role: UserRole.ADMIN });
       if (user) {
         throw new BadRequestException('Admin already exists');
       }
 
-      user = await this.create({ ...payload, role: UserRole.admin });
+      user = await this.create({ ...payload, role: UserRole.ADMIN });
       return user;
     } catch (error) {
       console.log(error);

@@ -1,4 +1,4 @@
-import { UserRole } from './user.schema';
+import { UserRole } from './schemas/user.schema';
 
 export interface UserType {
   _id?: string;

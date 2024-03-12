@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { MovieController } from './movie.controller';
+import { RoutineController } from './routine.controller';
 
-describe('MovieController', () => {
-  let controller: MovieController;
+describe('RoutineController', () => {
+  let controller: RoutineController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [MovieController],
+      controllers: [RoutineController],
     }).compile();
 
-    controller = module.get<MovieController>(MovieController);
+    controller = module.get<RoutineController>(RoutineController);
   });
 
   it('should be defined', () => {

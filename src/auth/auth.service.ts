@@ -4,7 +4,7 @@ import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
 import { RegisterUserRequest } from 'src/user/user.dto';
 import { Injectable } from '@nestjs/common';
-import { User, UserRole } from 'src/user/user.schema';
+import { User, UserRole } from 'src/user/schemas/user.schema';
 
 export interface TokenPayload {
   userId: string;

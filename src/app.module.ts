@@ -3,11 +3,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MovieModule } from './movie/movie.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { UtilModule } from './util/util.module';
-import { FavouriteModule } from './favourite/favourite.module';
+import { RoutineModule } from './routine/routine.module';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
   imports: [
@@ -19,11 +19,11 @@ import { FavouriteModule } from './favourite/favourite.module';
       }),
       inject: [ConfigService],
     }),
-    MovieModule,
     AuthModule,
     UserModule,
     UtilModule,
-    FavouriteModule,
+    RoutineModule,
+    ScheduleModule,
   ],
   controllers: [AppController],
   providers: [AppService],
